@@ -22,4 +22,46 @@ public class Profile {
         this.goals = new HashMap<>();
         this.completedGoals = new ArrayList<>();
     }
+
+    // MODIFIES: this
+    // Rewards x amount of tokens
+    public void reward(int x) {
+        tokens = this.tokens + x;
+    }
+
+    // MODIFIES: this
+    // Adds task to hash map of tasks
+    public void addTask(Task task) {
+        tasks.put(task.getTitle(), task);
+    }
+
+    // MODIFIES: this
+    // Removes task from hash map of tasks
+    public void removeTask(Task task) {
+        tasks.remove(task.getTitle());
+    }
+
+    // MODIFIES: this
+    // Adds task to list of completed tasks
+    public void addCompletedTask(Task task) {
+        completedTasks.add(task);
+    }
+    
+    // MODIFIES: this
+    // Adds goal to hash map of goals
+    public void addGoal(Goal goal) {
+        goals.put(goal.getName(), goal);
+    }
+
+    // MODIFIES: this
+    // Removes goal form hash map of goals
+    public void removeGoal(Goal goal) {
+        goals.remove(goal.getName());
+    }
+
+    // MODIFIES: this
+    // Adds goal to list of completed goals
+    public void addCompletedGoal(Goal goal) {
+        completedGoals.add(goal);
+    }
 }

@@ -17,6 +17,7 @@ This program combines addictive gacha games with productivity trackers!
 ### Future Features:
 - Easily swap the type of 'cards' collected from Pokemon into your card type of choice
 - Include more pokemon cards by implementing automation
+- Implement weekly goals
 
 ### Technology Used:
 **Languages:** Java
