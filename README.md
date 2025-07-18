@@ -7,7 +7,6 @@ This program combines addictive gacha games with productivity trackers!
 - Earn tokens for completing tasks to receive packs
 - Get rewarded with tokens for collecting Pokemon cards
 - Get rewarded with tokens for completing daily goals
-- Easily swap the type of 'cards' collected from Pokemon into your card type of choice
 
 ### How to Run:
 [IN PROGRESS]
@@ -16,9 +15,11 @@ This program combines addictive gacha games with productivity trackers!
 [IN PROGRESS]
 
 ### Future Features:
+- Easily swap the type of 'cards' collected from Pokemon into your card type of choice
 - Include more pokemon cards by implementing automation
 
 ### Technology Used:
 **Languages:** Java
+
 **Other:** Swing, JUnit
 
