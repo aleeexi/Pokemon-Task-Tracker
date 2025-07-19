@@ -26,12 +26,26 @@ public class Console {
         this.running = true;
     }
 
-    // TODO: increase progress on goals
     // Marks given task as completed, adds given task to list of completed tasks, and rewards tokens
     public void completeTask(Task task) {
         task.complete();
         profile.addCompletedTask(task);
         profile.removeTask(task);
         profile.reward(TASK_COMPLETION_REWARD);
+
+        for (Goal g : profile.getGoals().values()) {
+            g.progress();
+            if (g.getAchieved()) {
+                completeGoal(g);
+            }
+        }
+    }
+
+    // TODO: refactor into observers design?
+    // Marks given goal as completed, adds given goal to list of completed goals, and rewards tokens
+    public void completeGoal(Goal goal) {
+        profile.addCompletedGoal(goal);
+        profile.removeGoal(goal);
+        profile.reward(goal.getReward());
     }
 }
