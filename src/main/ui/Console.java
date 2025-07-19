@@ -26,6 +26,8 @@ public class Console {
         this.running = true;
     }
 
+    // TODO: increase progress on goals
+    // Marks given task as completed, adds given task to list of completed tasks, and rewards tokens
     public void completeTask(Task task) {
         task.complete();
         profile.addCompletedTask(task);

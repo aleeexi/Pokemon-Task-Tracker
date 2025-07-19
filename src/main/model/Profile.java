@@ -64,4 +64,34 @@ public class Profile {
     public void addCompletedGoal(Goal goal) {
         completedGoals.add(goal);
     }
+
+    // Returns number of tokens that profile has
+    public int getTokens() {
+        return this.tokens;
+    }
+
+    // Returns date of last login
+    public LocalDate getLastLogin() {
+        return this.lastLogin;
+    }
+
+    // Returns hash map of tasks
+    public HashMap<String, Task> getTasks() {
+        return this.tasks;
+    }
+
+    // Returns list of completed tasks
+    public List<Task> getCompletedTasks() {
+        return this.completedTasks;
+    }
+
+    // Returns hash map of goals
+    public HashMap<String, Goal> getGoals() {
+        return this.goals;
+    }
+
+    // Returns list of completed goals
+    public List<Goal> getCompletedGoals() {
+        return this.completedGoals;
+    }
 }

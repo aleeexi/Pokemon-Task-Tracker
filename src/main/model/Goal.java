@@ -5,6 +5,7 @@ public class Goal {
     int criteria;
     int progress;
     int reward;
+    boolean achieved;
 
     // Constructs new goal with given name, number of completed tasks criteria, no progress made, and token reward
     public Goal(String name, int criteria,  int reward) {
@@ -12,6 +13,28 @@ public class Goal {
         this.criteria = criteria;
         this.progress = 0;
         this.reward = reward;
+        this.achieved = false;
+    }
+
+    // MODIFIES: this
+    // Increases number of tasks completed that contribute towards goal completion
+    // Marks goal as achieved if progress == criteria
+    public void progress() {
+        if (this.progress == this.criteria) {
+            return;
+        }
+
+        this.progress = progress + 1;
+        
+        if (this.progress == this.criteria) {
+            achieve();
+        }
+    }
+
+    // MODIFIES: this
+    // Sets achievement status of goal to true
+    public void achieve() {
+        this.achieved = true;
     }
 
     // Returns name of goal
@@ -29,8 +52,13 @@ public class Goal {
         return this.progress;
     }
 
-    // Returns number of tokens rewarded for completing this task
+    // Returns number of tokens rewarded for completing this goal
     public int getReward() {
         return this.reward;
+    }
+
+    // Returns achievement status of goal
+    public boolean getAchieved() {
+        return this.achieved;
     }
 }
