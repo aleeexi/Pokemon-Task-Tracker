@@ -1,10 +1,10 @@
 package main.model;
 
 public class Card {
-    String name;
-    EnergyType type;
-    Rarity rarity;
-    String id;
+    private String name;
+    private EnergyType type;
+    private Rarity rarity;
+    private String id;
 
     // Constructs new card with given name, energy type, rarity, and id
     public Card(String name, EnergyType type, Rarity rarity, String id) {

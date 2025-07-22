@@ -13,12 +13,16 @@ public class CardTest {
     Card c1;
     Card c2;
     Card c3;
+    Card c4;
+    Card c5;
 
     @BeforeEach
     void runBefore() {
-        c1 = new Card("Metapod", EnergyType.Grass, Rarity.Uncommon, "1");
-        c2 = new Card("Banette", EnergyType.Psychic, Rarity.Double_Rare, "2");
-        c3 = new Card("Tauros", EnergyType.Colorless, Rarity.Ultra_Rare, "3");
+        c1 = new Card("Metapod", EnergyType.Grass, Rarity.Uncommon, "2");
+        c2 = new Card("Banette", EnergyType.Psychic, Rarity.Double_Rare, "088");
+        c3 = new Card("Tauros", EnergyType.Colorless, Rarity.Ultra_Rare, "144");
+        c4 = new Card("Entei", EnergyType.Fire, Rarity.Rare, "1");
+        c5 = new Card("Zorua", EnergyType.Darkness, Rarity.Common, "52");
     }
 
     @Test
@@ -26,7 +30,7 @@ public class CardTest {
         assertEquals("Metapod", c1.getName());
         assertEquals("Grass", c1.getType());
         assertEquals("Uncommon", c1.getRarity());
-        assertEquals("1", c1.getID());
+        assertEquals("2", c1.getID());
     }
 
     @Test
@@ -56,7 +60,7 @@ public class CardTest {
 
     @Test
     void testGetID() {
-        assertEquals("2", c2.getID());
+        assertEquals("088", c2.getID());
     }
     
 }

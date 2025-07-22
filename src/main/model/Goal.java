@@ -1,11 +1,11 @@
 package main.model;
 
 public class Goal {
-    String name;
-    int criteria;
-    int progress;
-    int reward;
-    boolean achieved;
+    private String name;
+    private int criteria;
+    private int progress;
+    private int reward;
+    private boolean achieved;
 
     // Constructs new goal with given name, number of completed tasks criteria, no progress made, and token reward
     public Goal(String name, int criteria,  int reward) {

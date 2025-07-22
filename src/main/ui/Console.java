@@ -3,6 +3,7 @@ package main.ui;
 import java.util.Scanner;
 
 import main.model.Card;
+import main.model.CardPack;
 import main.model.Collection;
 import main.model.Goal;
 import main.model.Profile;
@@ -11,6 +12,7 @@ import main.model.Task;
 public class Console {
     private Profile profile;
     private Collection collection;
+    private CardPack cardPack;
     private Scanner scanner;
     private boolean isRunning;
 

@@ -1,9 +1,9 @@
 package main.model;
 
 public class Task {
-    String title;
-    String description;
-    boolean completed;
+    private String title;
+    private String description;
+    private boolean completed;
 
     // Constructs new task with title, description, and incomplete status
     public Task(String title, String description) {

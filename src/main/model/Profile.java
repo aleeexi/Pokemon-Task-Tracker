@@ -2,16 +2,19 @@ package main.model;
 
 import java.time.LocalDate;
 import java.util.List;
+
+import main.exceptions.InsufficientTokensException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Profile {
-    int tokens;
-    LocalDate lastLogin;
-    HashMap<String, Task> tasks;
-    List<Task> completedTasks;
-    HashMap<String, Goal> goals;
-    List<Goal> completedGoals;
+    private int tokens;
+    private LocalDate lastLogin;
+    private HashMap<String, Task> tasks;
+    private List<Task> completedTasks;
+    private HashMap<String, Goal> goals;
+    private List<Goal> completedGoals;
 
     // Constructs new profile with 0 tokens, last login date as current date, and empty lists of tasks, completed tasks, goals, and completed goals
     public Profile() {
@@ -29,12 +32,25 @@ public class Profile {
         tokens = this.tokens + x;
     }
 
+    
+    // MODIFIES: this
+    // Spends x amount of tokens;
+    // If x > current tokens, throws InsufficientTokensException
+    public void spend(int x) throws InsufficientTokensException {
+        if (x > this.tokens) {
+            throw new InsufficientTokensException();
+        } else {
+            tokens = this.tokens - x;
+        }
+    }
+
     // MODIFIES: this
     // Adds task to hash map of tasks
     public void addTask(Task task) {
         tasks.put(task.getTitle(), task);
     }
 
+    // REQUIRES: task exists in this.tasks
     // MODIFIES: this
     // Removes task from hash map of tasks
     public void removeTask(Task task) {
