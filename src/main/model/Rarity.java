@@ -1,5 +1,6 @@
 package main.model;
 
+// Hierarchy of Pokemon card rarities supported by this application
 public enum Rarity {
     Common,
     Uncommon,

@@ -4,12 +4,14 @@ public class Card {
     String name;
     EnergyType type;
     Rarity rarity;
+    String id;
 
-    // Constructs new card with given name, energy type, and rarity
-    public Card(String name, EnergyType type, Rarity rarity) {
+    // Constructs new card with given name, energy type, rarity, and id
+    public Card(String name, EnergyType type, Rarity rarity, String id) {
         this.name = name;
         this.type = type;
         this.rarity = rarity;
+        this.id = id;
     }
 
     // Returns name of card
@@ -25,5 +27,10 @@ public class Card {
     // Returns rarity of card as String
     public String getRarity() {
         return this.rarity.toString();
+    }
+
+    // Returns id of card as String
+    public String getID() {
+        return this.id;
     }
 }

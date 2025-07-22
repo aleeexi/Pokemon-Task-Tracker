@@ -2,6 +2,7 @@ package main.ui;
 
 import java.util.Scanner;
 
+import main.model.Card;
 import main.model.Collection;
 import main.model.Goal;
 import main.model.Profile;
@@ -11,7 +12,7 @@ public class Console {
     private Profile profile;
     private Collection collection;
     private Scanner scanner;
-    private boolean running;
+    private boolean isRunning;
 
     private static final int TASK_COMPLETION_REWARD = 100;
     private static final Goal FIVE_TASKS = new Goal("Complete 5 tasks", 5, 500);
@@ -23,9 +24,10 @@ public class Console {
         this.profile = new Profile();
         this.collection = new Collection();
         this.scanner = new Scanner(System.in);
-        this.running = true;
+        this.isRunning = true;
     }
 
+    // MODIFIES: Task, Profile
     // Marks given task as completed, adds given task to list of completed tasks, and rewards tokens
     public void completeTask(Task task) {
         task.complete();
@@ -42,6 +44,7 @@ public class Console {
     }
 
     // TODO: refactor into observers design?
+    // MODIFIES: Goal, Profile
     // Marks given goal as completed, adds given goal to list of completed goals, and rewards tokens
     public void completeGoal(Goal goal) {
         profile.addCompletedGoal(goal);
